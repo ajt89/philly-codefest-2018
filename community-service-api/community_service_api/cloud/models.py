@@ -17,7 +17,7 @@ class UserProfile(AuditModel):
     """
     Store additional information on users
     """
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_num = models.CharField(max_length=20, null=True, default=None)
 
 
