@@ -17,7 +17,7 @@ class UserProfile(AuditModel):
     """
     Store additional information on users
     """
-    user = models.OneToOneField(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     phone_num = models.CharField(max_length=20, null=True, default=None)
 
 
@@ -49,9 +49,9 @@ class UserEventRole(AuditModel):
     """
     Relationships between Users and Events
     """
-    role = models.ForeignKey(RoleType)
-    user = models.ForeignKey(User)
-    event = models.ForeignKey(Event)
+    role = models.ForeignKey(RoleType, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
     active = models.BooleanField(default=True)
 
 
@@ -59,8 +59,8 @@ class Description(AuditModel):
     """
     Addition information for Users and Events
     """
-    event = models.ForeignKey(Event, null=True)
-    user = models.ForeignKey(User, null=True)
+    event = models.ForeignKey(Event, null=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     value = models.CharField(max_length=255, blank=False)
     url = models.CharField(max_length=255)
     image = models.ImageField(blank=True)
