@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter} from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
-import {AppRouter} from './Components';
-import logo from './logo.svg';
+import {AppRouter, Navbar} from './Components';
 import './App.css';
 
 class App extends Component {
@@ -10,12 +10,12 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <div>
+          <MuiThemeProvider>
             <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
             </header>
+            <Navbar />
             {AppRouter()}
-          </div>
+          </MuiThemeProvider>
         </BrowserRouter>
       </div>
     );
