@@ -2,12 +2,13 @@ import React from 'react';
 import {BrowserRouter, Link, Switch, Route} from 'react-router-dom';
 import {withRouter} from 'react-router';
 
-import {Home} from '../../Views';
+import {Home, Account} from '../../Views';
 
 function AppRouter(props) {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/account" exact={true} component={Account} />
     </Switch>
   );
 }
