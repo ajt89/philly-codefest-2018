@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import 'whatwg-fetch';
 
 import {AppRouter, Navbar} from './Components';
 import './App.css';
