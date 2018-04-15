@@ -20,8 +20,7 @@ const uiSchema = {
   },
   "password": {
     "ui:widget": "password",
-  },
-  "ui:theme": "bootstrap"
+  }
 };
 
 const postLogin = (formData) => {
