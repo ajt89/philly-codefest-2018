@@ -6,6 +6,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
+from users.user_queries import verify_token
+
 
 def list_event_users(request):
     return HttpResponse('event users')
