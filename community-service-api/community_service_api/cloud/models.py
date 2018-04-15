@@ -34,6 +34,10 @@ class Location(AuditModel):
     Location of users and events
     """
     zipcode = models.CharField(max_length=16)
+    address_line_one = models.CharField(max_length=255, null=True)
+    address_line_two = models.CharField(max_length=255, null=True)
+    city = models.CharField(max_length=255, null=True)
+    state = models.CharField(max_length=255, null=True)
     users = models.ManyToManyField(User, related_name='user_locations')
     events = models.ManyToManyField(Event, related_name='event_locations')
 
